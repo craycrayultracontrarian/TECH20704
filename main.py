@@ -1,20 +1,8 @@
-#CLEANING UP DATA STEP - CYPRIEN
-import pandas
-data = pandas.read_csv("WA_Fn-UseC_-Telco-Customer-Churn.csv")
-print(data.head())
-print(data.info())
+import pandas as pd
+data = pd.read_csv("WA_Fn-UseC_-Telco-Customer-Churn-main.csv")
 
 #drop irrelevant/unimportant columns 
-columns_to_keep = [
-    'customerID', 'SeniorCitizen', 'Partner', 'Dependents', 'tenure', 'InternetService', 
-    'OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 'TechSupport', 
-    'StreamingMovies', 'Contract', 'PaperlessBilling', 'PaymentMethod', 
-    'MonthlyCharges', 'Churn'
-]
-
-# Reassign 'data' to only include these columns
-data = data[columns_to_keep]
-print(data.head())
+data.drop()
 
 # Manually map 'Yes' to 1 and 'No' to 0 for specific columns
 yes_no_columns = [
@@ -32,7 +20,6 @@ yes_no_columns = [
 # Replace 'Yes' with 1 and 'No' with 0 in each specified column
 for column in yes_no_columns:
     data[column] = data[column].replace({'Yes': 1, 'No': 0})
-print(data.head())
 
 # create binary columns for each category in 'InternetService'
 data['InternetService_DSL'] = (data['InternetService'] == 'DSL').astype(int)
@@ -92,6 +79,3 @@ def categorize_monthly_charges(charge):
 
 # Apply the function to the 'MonthlyCharges' column and overwrite it with categorical values
 data['MonthlyCharges'] = data['MonthlyCharges'].apply(categorize_monthly_charges)
-
-# Display the first few rows to verify the changes
-print(data.head())
