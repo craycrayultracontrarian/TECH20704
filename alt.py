@@ -129,14 +129,14 @@ CramerDf = CramerDf.sort_values(by="Cramer's V")
 
 # the plot shows us that several variables are relatively irrelevant and worth dropping
 # we also need to drop at least one category from each categorical variable we performed onehotencoding on
-df.drop(columns=["MonthlyCharges_25-50", "MonthlyCharges_50-75", "PhoneService","MultipleLines", "Months_Tenure_19-36"])
+df.drop(columns=["MonthlyCharges_25-50", "MonthlyCharges_50-75", "PhoneService","MultipleLines", "Months_Tenure_19-36", "PaymentMethod_Mailed check"])
 
 # now we can finally prepare our logistic regression to measure the probability of churn given our binary variables.
 
 X = df [['SeniorCitizen', 'Partner', 'Dependents', 'InternetService', 'Months_Tenure_0-6', 
     'Months_Tenure_37-72', 'Months_Tenure_7-18', 'Contract_Month-to-month', 'Contract_One year', 
     'Contract_Two year', 'PaymentMethod_Bank transfer (automatic)', 'PaymentMethod_Credit card (automatic)',
-    'PaymentMethod_Electronic check', 'PaymentMethod_Mailed check', 'MonthlyCharges_0-25', 
+    'PaymentMethod_Electronic check', 'MonthlyCharges_0-25', 
     'MonthlyCharges_100+', 'MonthlyCharges_75-100']]
 y = df['Churn']
 

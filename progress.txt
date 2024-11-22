@@ -32,8 +32,11 @@ Classification Report:
 weighted avg       0.81      0.73      0.75      1409
 
 After testing a custom threshold of 0.6
-
+Confusion Matrix:
+[[819 217]
+ [ 92 281]]
 Classification Report:
+
               precision    recall  f1-score   support
 
            0       0.90      0.78      0.83      1036
@@ -43,7 +46,13 @@ Classification Report:
    macro avg       0.73      0.77      0.74      1409
 weighted avg       0.81      0.77      0.78      1409
 
-I still wasn't happy with the precision so I wanted to try other models. 
+Logistic Regression Coefficients:
+Intercept: [0.67335711]
+Coefficients: [[ 0.11530056  0.06050222 -0.47939529  0.310115    1.17514769 -0.34801774
+   0.23683483 -0.92931593 -1.93593759 -3.27136096 -0.12306059 -0.20074088
+   0.38102869 -0.94640383  1.03457548  0.48418353]]
+
+I still wasn't happy with the precision so I wanted to try other models (I deleted the code so maybe we won't talk about it). 
 
 Random Forest and XGBoost. This was such a failure I deleted the code lol.
 
