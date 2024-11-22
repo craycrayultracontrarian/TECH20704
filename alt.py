@@ -146,7 +146,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 # Step 2: Check Class Distribution
 print(f"Class distribution before SMOTE: {Counter(y_train)}")
 
-# Step 3: Apply SMOTE to Balance the Dataset
+# Step 3: Apply SMOTE to Balance the Dataset (i added this 2nd, after testing default logistic regression)
 smote = SMOTE(random_state=42)
 X_train_sm, y_train_sm = smote.fit_resample(X_train, y_train)
 print(f"Class distribution after SMOTE: {Counter(y_train_sm)}")
@@ -159,7 +159,7 @@ log_model.fit(X_train_sm, y_train_sm)
 # Predicted probabilities
 y_pred_probs = log_model.predict_proba(X_test)[:, 1]
 
-# Predicted classes with a custom threshold
+# Predicted classes with a custom threshold (I added this 3rd, to balance the model a little more)
 threshold = 0.6
 y_pred_custom = (y_pred_probs >= threshold).astype(int)
 
