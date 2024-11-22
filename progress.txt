@@ -1,0 +1,54 @@
+my first attempt at logistic regression on our data (pre-SMOTE):
+Accuracy: 0.8048261178140526
+AUC: 0.8528548655894501
+Confusion Matrix:
+[[936 100]
+ [175 198]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.84      0.90      0.87      1036
+           1       0.66      0.53      0.59       373
+
+    accuracy                           0.80      1409
+   macro avg       0.75      0.72      0.73      1409
+weighted avg       0.80      0.80      0.80      1409
+
+After applying SMOTE (far less churn cases than non-churn)
+
+Accuracy: 0.7338537970191625
+AUC: 0.8463258356019749
+Confusion Matrix:
+[[719 317]
+ [ 58 315]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.93      0.69      0.79      1036
+           1       0.50      0.84      0.63       373
+
+    accuracy                           0.73      1409
+   macro avg       0.71      0.77      0.71      1409
+weighted avg       0.81      0.73      0.75      1409
+
+After testing a custom threshold of 0.6
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.90      0.78      0.83      1036
+           1       0.55      0.76      0.64       373
+
+    accuracy                           0.77      1409
+   macro avg       0.73      0.77      0.74      1409
+weighted avg       0.81      0.77      0.78      1409
+
+I still wasn't happy with the precision so I wanted to try other models. 
+
+Random Forest and XGBoost. This was such a failure I deleted the code lol.
+
+All in all, testing default linear regression with the variables we identified, it was good, but didn't catch enough of the churn cases
+
+Then, testing SMOTE to include more churn cases in the training data and thus balance it out, it worked. We catched more churn cases (True positives).
+
+However, we got too many false positives (we thought customers would churn even if they wouldn't). So we increased the threshold and that compensated.
