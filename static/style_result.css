@@ -1,0 +1,95 @@
+
+body{
+    display: grid;
+    place-items: center;
+    height: 97vh;
+}
+
+.wrapper{
+    font-size: 150px;
+    line-height: 1em;
+    text-align: center;
+    overflow: hidden;
+    font-weight: 900;
+
+    margin-top: 175px;
+}
+
+.number-area{
+    display: inline-block;
+    overflow: hidden;
+    width: 0.6em;
+    height: 150px;
+    color: #3E8FBE
+}
+
+.num {
+    word-break: break-all;
+    display: block;
+    width: 0;
+    padding: 0 1.6em 0 0;
+    margin: 0;
+    overflow: inherit;
+    animation: animate 0.5s steps(10) forwards infinite;
+}
+
+.num::before{
+    content: attr(data-attr);
+    display: inline-block;
+    width: 100%;
+    height: auto;
+}
+
+@keyframes animate{
+    100%{
+        transform: translate3d(0,-10em, 0);
+    }
+}
+
+.n1{
+   animation-iteration-count: 4; 
+}
+
+.n2{
+    animation-iteration-count: 8; 
+
+}
+
+#text {
+    font-size: 25px;
+
+    opacity: 0; 
+    animation: fadeIn 2s ease-in 2s forwards;
+    color: #3E8FBE
+}
+
+
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* Le texte devient visible */
+    }
+}
+
+button{
+    font-size: 20px;
+
+    background-color: #FFE7C2;
+    border: none;
+
+    /*margin-right: 30px;*/
+    padding: 15px 25px;
+
+    opacity: 0; 
+    animation: fadeIn 2s ease-in 3s forwards;
+
+    transition: box-shadow 0.1s ease;
+
+}
+
+button:hover{
+    cursor: pointer;
+
+    background-color: #FFBD59;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+}
+

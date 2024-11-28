@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home page</title>
+        <link rel="stylesheet" href="{{ url_for('static',filename='style_result.css')}}"> 
+    </head>
+    <body>
+        <div class="content">
+            <div class="wrapper">
+                <div class="number-area">
+                    <span class="num n1" data-attr="5741278934">{{first_digit}}</span>
+                </div>
+                <div class="number-area">
+                    <span class="num n2" data-attr="4785125986">3{{second_digit}}/span>
+                </div>
+            </div>
+    
+            <p id="text">is your likelihood to leave your operator during the next month</p>
+        </div>
+
+        <form action="/home">
+
+            <button type="submit">Restart</button>
+
+        </form>
+
+    </body>
+</html>

@@ -1,0 +1,112 @@
+* {
+    font-family: sans-serif
+}
+
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#questions {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 3px;
+    margin-bottom: 50px;
+}
+
+.question_and_answers {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.question_and_answers p {
+    font-size: 30px;
+    margin-left: 40px;
+    margin-right: 70px;
+
+
+    flex-shrink: 0;
+    width: 550px;
+
+}
+
+input[type="radio"] {
+    appearance: none;
+    padding: 20px 50px;
+    background-color: #E0EDF5;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+}
+
+input[type="radio"]:checked {
+    background-color: #FFBD59;
+}
+
+input[type="radio"]:hover {
+    background-color: #3E8FBE;
+}
+
+/* COPIE COLLE */
+
+.button {
+    float: left;
+    margin: 0 5px 0 0;
+    width: 180px;
+    height: 60px;
+    position: relative;
+  }
+  
+.button label,
+.button input {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+.button label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 90;
+    line-height: 1.8em;
+  }
+  
+#button_div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#submit_button {
+    color: black;
+    font-size: 20px;
+
+    border: none;
+    background-color: #FFE7C2;
+
+    padding: 20px;
+
+    height: 8°px;
+    width: 200px;
+
+}
+
+#submit_button:hover {
+    background-color: #FF9D0A;
+    cursor: pointer;
+}

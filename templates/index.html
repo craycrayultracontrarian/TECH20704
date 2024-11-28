@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Questions</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}"> 
+</head>
+<body>
+    <h1>Will you cut the cord?</h1>
+    <h3>Answer our 4 questions to know the answer!</h3>
+
+    <form action="/get_value_from_answers" method="post">
+        
+    <div id="questions">
+        <div class="question_and_answers"> 
+            <p>For how long have you been subscribed?</p>
+
+            <div class="button">
+                <input type="radio" id="tenure1" name="tenure" value = "0-6">
+                <label for="tenure1">0-6 months</label>
+            </div>
+
+            <div class="button">
+                <input type="radio" id="tenure2" name="tenure" value = "7-18">
+                <label for="tenure2">7-18 months</label>
+            </div>
+
+            <div class="button">
+                <input type="radio" id="tenure3" name="tenure" value = "19+">
+                <label for="tenure3">More than 19 months</label>
+            </div>
+
+        </div>
+
+        <div class="question_and_answers">
+            <p>How often do your renew your contract?</p>
+
+            <div class="button">
+                <input type="radio" id="contract_type1" name="contract_type" value = "month_to_month">
+                <label for="contract_type1">Every month</label>
+            </div>
+
+            <div class="button">
+                <input type="radio" id="contract_type2" name="contract_type" value = "one_year">
+                <label for="contract_type2">Every year</label>
+            </div>
+
+            <div class="button">
+                <input type="radio" id="contract_type3" name="contract_type" value = "two_year">
+                <label for="contract_type3">Every 2 years</label>
+            </div>
+        </div>
+
+        <div class="question_and_answers">
+            <p>What is your payment method?</p>
+
+            <div class="button">
+                <input type="radio" id="payment_method1" name="payment_method" value="bank_transfer">
+                <label for="payment_method1">Bank transfer</label>
+            </div>
+
+            <div class="button">
+                <input type="radio" id="payment_method2" name="payment_method" value="credit_card">
+                <label for="payment_method2">Credit card</label>
+            </div>
+
+            <div class="button">
+                <input type="radio" id="payment_method3" name="payment_method" value="electronic_check">
+                <label for="payment_method3">Electronic check</label>
+            </div>
+        </div>
+
+        <div class="question_and_answers">
+            <p>What is your monthly payment?</p>
+
+            <div class="button">
+                <input type="radio" id="monthly_payment1" name="monthly_payment" value ="0-74">
+                <label for="monthly_payment1">0-74$</label>
+            </div>
+
+            <div class="button">
+                <input type="radio" id="monthly_payment2" name="monthly_payment" value ="75-100">
+                <label for="monthly_payment2">75$-100$</label>
+            </div>
+
+            <div class="button">
+                <input type="radio" id="monthly_payment3" name="monthly_payment" value ="100+">
+                <label for="monthly_payment3">More than 100$</label>
+            </div>
+        </div>
+    </div>
+
+    <div id="button_div">
+        <button type="submit" id="submit_button">Tell me if I'll cut the cord!</button>
+    </div>
+    
+    </form>
+</body>
+</html>
